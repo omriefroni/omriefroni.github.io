@@ -11903,7 +11903,7 @@ Please change the parent <Route path="${parentPath}"> to <Route path="${parentPa
   function sendCompletionMarker() {
     try {
       const body = new FormData();
-      body.append(COUNT_FIELD, "\u05E1\u05D9\u05D5\u05DD");
+      var _src = new URLSearchParams(location.search).get("src"); body.append(COUNT_FIELD, "\u05E1\u05D9\u05D5\u05DD" + (_src ? "|" + _src : ""));
       void fetch(COUNT_FORM, { method: "POST", mode: "no-cors", keepalive: true, body });
     } catch {
     }
